@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_003553) do
+ActiveRecord::Schema.define(version: 2019_04_07_163637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,17 @@ ActiveRecord::Schema.define(version: 2019_04_07_003553) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "title", null: false
-    t.string "level"
     t.string "desc"
     t.integer "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_jobs_on_title"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "level", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|

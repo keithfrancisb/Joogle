@@ -4,7 +4,6 @@
 #
 #  id         :bigint(8)        not null, primary key
 #  title      :string           not null
-#  level      :string
 #  desc       :string
 #  company_id :integer          not null
 #  created_at :datetime         not null
