@@ -106,3 +106,23 @@ def get_company_id(company_info)
 
   company.id
 end
+
+def persist_jobs(jobs)
+  jobs.each do |job|
+    title = job["name"]
+    desc = job["contents"]
+    company = job["company"]
+    
+    levels = job["levels"]
+    categories = job["categories"]
+    locations = job["locations"]
+
+    newJob = Job.new(title: title, desc: desc)
+    newJob.company_id = get_company_id(company)
+    newJob.save!
+  
+    set_location_ids(locations, newJob.id, "job")
+    set_category_ids(categories, newJob.id)
+    set_level_ids(levels, newJob.id)
+  end
+end

@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require_relative "./util.rb"
 
 Company.destroy_all
 Job.destroy_all
@@ -30,30 +29,33 @@ Level.create(level: "Senior Level")
 # Healthcare & Medicine, Legal, Operations, Retail, Social Media & Community,
 # Customer Service, Engineering, Sales
 
-# https://www.themuse.com/api/public/jobs?page=0&category=
+job_api = "https://www.themuse.com/api/public/jobs?page=0&category="
 # https://www.themuse.com/api/public/companies/:id
 
+# ------------------ Account Management ------------------
+category = "Account%20Management"
+ApplicationRecord.add_new_jobs(category)
 
-am_uri = "https://www.themuse.com/api/public/jobs?page=0&category=Account%20Management"
-account_management_jobs = RestClient.get(am_uri)
-account_management_jobs = JSON.parse account_management_jobs
-account_management_jobs = account_management_jobs["results"]
+# ---------------------- Education -----------------------
+category = "Education"
+ApplicationRecord.add_new_jobs(category)
 
-account_management_jobs.each do |job|
-  title = job["name"]
-  desc = job["contents"]
-  company = job["company"]
-  
-  levels = job["levels"]
-  categories = job["categories"]
-  locations = job["locations"]
+# ----------------------- Finance ------------------------
+category = "Finance"
+ApplicationRecord.add_new_jobs(category)
 
-  newJob = Job.new(title: title, desc: desc)
-  newJob.company_id = get_company_id(company)
-  newJob.save!
- 
-  set_location_ids(locations, newJob.id, "job")
-  set_category_ids(categories, newJob.id)
-  set_level_ids(levels, newJob.id)
-end
+# ------------------------ Retail -----------------------
+category = "Retail"
+ApplicationRecord.add_new_jobs(category)
 
+# --------------------- Engineering ---------------------
+category = "Engineering"
+ApplicationRecord.add_new_jobs(category)
+
+# --------------- Healthcare & Medicine -----------------
+category = "Healthcare%20%26%20Medicine"
+ApplicationRecord.add_new_jobs(category)
+
+# --------------- Customer Service -----------------
+category = "Customer%20Service"
+ApplicationRecord.add_new_jobs(category)
