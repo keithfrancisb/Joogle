@@ -10,4 +10,12 @@
 
 class Category < ApplicationRecord
   validates :name, presence: true
+
+  has_many :jobs_to_categories,
+    as: :infoable,
+    class_name: :JobInformation
+
+  has_many :jobs,
+    through: :jobs_to_categories,
+    source: :job
 end
