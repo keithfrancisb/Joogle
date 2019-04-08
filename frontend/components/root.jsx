@@ -1,11 +1,9 @@
 import React from 'react';
-
+import App from './app';
 
 const Root = (props) => {
   return (
-    <h1>
-      I'm from React!
-    </h1>
+    <App />
   );
 };
 
