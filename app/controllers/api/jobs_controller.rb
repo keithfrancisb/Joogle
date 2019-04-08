@@ -1,7 +1,9 @@
 class Api::JobsController < ApplicationController
 
   def index
-    unless(params[:searchTerm] == '')
+    if(params[:searchTerm] == '')
+      render json: ['Must enter a search term.'], status: 422
+    else
       @jobs = Job.where('title ILIKE ?', "%#{params[:searchTerm]}%")
         .includes(
           :company,
@@ -11,8 +13,6 @@ class Api::JobsController < ApplicationController
         )
       render :index
     end
-
-    render json: ['Must enter a search term.'], status: 422
   end
 
   def show
@@ -24,5 +24,4 @@ class Api::JobsController < ApplicationController
       render json: ['Job not Found! :('], status: 404
     end
   end
-
 end
