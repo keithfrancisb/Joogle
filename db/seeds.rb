@@ -56,6 +56,6 @@ ApplicationRecord.add_new_jobs(category)
 category = "Healthcare%20%26%20Medicine"
 ApplicationRecord.add_new_jobs(category)
 
-# --------------- Customer Service -----------------
+# ----------------- Customer Service --------------------
 category = "Customer%20Service"
 ApplicationRecord.add_new_jobs(category)
