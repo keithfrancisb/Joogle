@@ -13,4 +13,4 @@
 export const fetchJobs = (searchTerm) => {
   return fetch(`api/jobs?searchTerm=${searchTerm}`)
     .then(res => res.json());
-}
+};
