@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthRoute } from 'react-router-dom';
 
+import SideBar from './sidebar/sidebar';
 import NavBar from './navbar/navbar';
 
 const App = (props) => {
@@ -11,7 +12,10 @@ const App = (props) => {
           <NavBar />
         </header>
       </div>
-
+      <div>
+        <SideBar />
+        {/* AuthRoutes go here */}
+      </div>
     </div>
   );
 };
