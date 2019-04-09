@@ -1,5 +1,45 @@
 :root {
   --navbar-color: #3c132d;
+  --sidebar-color: #464348;
   --button-color: purple;
+  --gray: #464348;
+  --index-color: #2d2431;
   
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+}
+
+/* #splash {
+
+} */
+
+.header {
+  text-align: center;
+  margin: 30px;
+  margin-top: 40px;
+}
+
+.sidebar-container {
+  position: fixed;
+  margin-left: -300px;
+  transition: 0.3s all;
+}
+
+.sidebar-container.active {
+  margin-left: 0px;
+}
+
+.main-content-container {
+  width: 100%;
+  margin-left: 0px;
+  transition: 0.3s all;
+  min-height: 100vh;
+  
+}
+
+.main-content-container.active {
+  margin-left: 300px;
 }
