@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class NavBar extends React.Component {
 
     this.update = this.update.bind(this);
     this.search = this.search.bind(this);
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(e) {
@@ -21,6 +24,35 @@ class NavBar extends React.Component {
   search(e) {
     e.preventDefault();
     console.log(this.state.searchTerm);
+    // debugger
+    this.props.fetchJobs(this.state.searchTerm)
+      .then(() => this.props.history.push('/search'));
+  }
+
+  toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar-container');
+    const main = document.querySelector('.main-content-container');
+    sidebar.classList.toggle("active");
+    main.classList.toggle("active");
+  }
+
+  renderErrors() {
+    const { errors } = this.props;
+    if(errors.length > 0) {
+      return (
+        <ul>
+          {errors.map((error, idx) => {
+            return (
+              <li key={idx} className="li-error">
+                Error: {error}
+              </li>
+            );
+          })}
+        </ul>
+      )
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -41,11 +73,12 @@ class NavBar extends React.Component {
             </div>
             <input type="submit" value="Search"/>
           </form>
+          <button onClick={this.toggleSidebar} id="filter-btn">Filter</button>
         </div>
-
+        {this.renderErrors()}
       </nav>
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

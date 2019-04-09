@@ -9,10 +9,10 @@ class SideBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="sidebar">
         I'm the Sidebar!
       </div>
-    )
+    );
   }
 }
 
