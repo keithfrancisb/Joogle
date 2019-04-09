@@ -4,8 +4,14 @@ class JobsIndex extends React.Component {
   constructor(props) {
     super(props);
 
+    this.viewJobDetails = this.viewJobDetails.bind(this);
   }
 
+  viewJobDetails(id) {
+    return () => {
+      this.props.history.push(`/show/${id}`);
+    };
+  }
 
   render() {
     const jobs = this.props.jobs.map((job, idx) => {
@@ -19,17 +25,20 @@ class JobsIndex extends React.Component {
             <span><b>Location:</b> {locations[0]}</span>
             <span><b>Description:</b>{desc.slice(0,100)}...</span>
           </div>
-          <button>View Details</button>
+          <button onClick={this.viewJobDetails(job.id)}>View Details</button>
         </li>
       );
     });
 
     return (
-      <div className="index-container">
-        <h1 className="header">Search Results</h1>
-        <ul className={"job-list"}>
-          {jobs}
-        </ul>
+      <div className="search-content-container">
+        <div className="sub-content-container">
+          <h1 className="header">Search Results</h1>
+          <ul className={"job-list"}>
+            {jobs}
+          </ul>
+        </div>
+
       </div>
     );
   }

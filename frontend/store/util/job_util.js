@@ -18,7 +18,17 @@ export const fetchJobs = (searchTerm) => {
         return res.json();
       } else {
         throw res.json();
-        // throw "Search Term can't be blank!"
+      }
+    });
+};
+
+export const fetchJob = (id) => {
+  return fetch(`api/jobs/${id}`)
+    .then(res => {
+      if(res.status === 200) {
+        return res.json();
+      } else {
+        throw res.json();
       }
     });
 };

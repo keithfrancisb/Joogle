@@ -4,3 +4,28 @@
   background: #464348;
   height: 100vh;
 }
+
+.filter-container {
+  padding: 20px;
+}
+
+.filter-header {
+  // text-align: center;
+  margin: 20px auto;
+}
+
+.filter-sub-header {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.filter-li {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+}
+.filter-li > input, label {
+  margin: 0 10px;
+}

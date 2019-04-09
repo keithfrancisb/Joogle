@@ -48,3 +48,14 @@ export const fetchJobs = (searchTerm) => dispatch => {
       err.then(error => dispatch(receiveJobErrors(error)));
     });
 };
+
+export const fetchJob = (id) => dispatch => {
+  return APIUtil.fetchJob(id)
+    .then(json => {
+      dispatch(receiveJob(json.job));
+      dispatch(clearErrors());
+    })
+    .catch(err => {
+      err.then(error => dispatch(receiveJobErrors(error)));
+    });
+};
