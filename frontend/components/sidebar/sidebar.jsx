@@ -9,7 +9,7 @@ class SideBar extends React.Component {
 
   render() {
     return (
-      <div id="sidebar">
+      <div className="sidebar-container">
         I'm the Sidebar!
       </div>
     );

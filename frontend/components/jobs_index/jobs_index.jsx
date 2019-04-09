@@ -9,14 +9,17 @@ class JobsIndex extends React.Component {
 
   render() {
     const jobs = this.props.jobs.map((job, idx) => {
-      const desc = job.desc.replace(/(<([^>]+)>)/ig, "")
+      const desc = job.desc.replace(/(<([^>]+)>)/ig, " ")
       const { company, locations, title } = job;
       return (
         <li key={idx} className="job-item">
-          <span><b>Title:</b> {title}</span>
-          <span><b>Company:</b> {company}</span>
-          <span><b>Location:</b> {locations[0]}</span>
-          <span><b>Description:</b> "{desc.slice(0,100)}..."</span>
+          <div className="job-item-details">
+            <span><b>Title:</b> {title}</span>
+            <span><b>Company:</b> {company}</span>
+            <span><b>Location:</b> {locations[0]}</span>
+            <span><b>Description:</b>{desc.slice(0,100)}...</span>
+          </div>
+          <button>View Details</button>
         </li>
       );
     });

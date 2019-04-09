@@ -12,6 +12,12 @@
   flex-direction: row;
 }
 
+#sidebar {
+  position: fixed;
+  margin-left: -300px;
+  transition: 0.3s all;
+}
+
 /* #splash {
 
 } */
@@ -20,6 +26,17 @@
   text-align: center;
   margin: 30px;
   margin-top: 40px;
+}
+
+.navbar-container {
+  position: fixed;
+}
+
+.overall-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px;
+  width: 100vw
 }
 
 .sidebar-container {
@@ -37,7 +54,9 @@
   margin-left: 0px;
   transition: 0.3s all;
   min-height: 100vh;
-  
+  display: flex;
+  flex-direction: row;
+
 }
 
 .main-content-container.active {

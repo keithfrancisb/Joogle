@@ -6,17 +6,20 @@ import NavBar from './navbar/navbar_container';
 import JobsIndex from './jobs_index/jobs_index_container';
 import Splash from './splash';
 
+{/* <div className="navbar-container"> */}
+// </div>
 const App = () => {
   return (
     <div id="app">
-      <div className="sidebar-container">
-        <SideBar />
-      </div>
-      <div className="main-content-container">
         <NavBar />
-        <Route exact path="/" component={Splash} />
-        <Route path="/search" component={JobsIndex} />
-        {/* AuthRoutes go here */}
+      <div className="overall-container">
+        <SideBar />
+        <div className="main-content-container">
+          <Route exact path="/" component={Splash} />
+          <Route path="/search" component={JobsIndex} />
+          {/* AuthRoutes go here */}
+        </div>
+
       </div>
     </div>
   );

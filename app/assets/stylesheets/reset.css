@@ -19,7 +19,6 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
-  /* background: url('assets/images/background.svg'); */
   -webkit-font-smoothing: antialiased;
 }
 
