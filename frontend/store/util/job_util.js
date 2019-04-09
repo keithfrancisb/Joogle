@@ -12,5 +12,13 @@
 
 export const fetchJobs = (searchTerm) => {
   return fetch(`api/jobs?searchTerm=${searchTerm}`)
-    .then(res => res.json());
+    .then(res => {
+      // debugger
+      if (res.status === 200) {
+        return res.json();
+      } else {
+        throw res.json();
+        // throw "Search Term can't be blank!"
+      }
+    });
 };

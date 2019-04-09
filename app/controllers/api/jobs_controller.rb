@@ -11,7 +11,11 @@ class Api::JobsController < ApplicationController
           :levels,
           :categories
         )
-      render :index
+      if @jobs.length == 0
+        render json: ['No Match Found! Please try again.'], status: 404
+      else
+        render :index
+      end
     end
   end
 
