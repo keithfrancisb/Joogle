@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import JobsIndex from './jobs_index';
 
-const msp = ({ entities }) => {
+import { filterJobs } from '../../store/selectors';
+
+const msp = ({ entities, filters }) => {
+  
+  const jobs = filterJobs(Object.values(entities.jobs), filters);
+
   return {
-    jobs: Object.values(entities.jobs)
+    applyFilter: filters.applyFilter,
+    jobs
   };
 };
 

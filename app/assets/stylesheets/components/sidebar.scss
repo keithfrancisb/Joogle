@@ -10,8 +10,35 @@
 }
 
 .filter-header {
-  // text-align: center;
-  margin: 20px auto;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 160px;
+}
+
+// .filter-header > h2 {
+//   margin-bottom: 20px;
+// }
+
+.filter-header > h3 {
+  margin: 0px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 105%;
+}
+
+.filter-btn {
+  background: purple;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .filter-sub-header {

@@ -9,7 +9,7 @@ import Splash from './splash';
 
 {/* <div className="navbar-container"> */}
 // </div>
-const App = () => {
+const App = (props) => {
   return (
     <div id="app">
         <NavBar />

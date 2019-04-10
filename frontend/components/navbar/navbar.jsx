@@ -11,7 +11,6 @@ class NavBar extends React.Component {
 
     this.update = this.update.bind(this);
     this.search = this.search.bind(this);
-    this.toggleSidebar = this.toggleSidebar.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -27,13 +26,6 @@ class NavBar extends React.Component {
     // debugger
     this.props.fetchJobs(this.state.searchTerm)
       .then(() => this.props.history.push('/search'));
-  }
-
-  toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar-container');
-    const main = document.querySelector('.main-content-container');
-    sidebar.classList.toggle("active");
-    main.classList.toggle("active");
   }
 
   renderErrors() {
@@ -73,7 +65,6 @@ class NavBar extends React.Component {
             </div>
             <input type="submit" value="Search"/>
           </form>
-          <button onClick={this.toggleSidebar} id="filter-btn">Filter</button>
         </div>
         {this.renderErrors()}
       </nav>

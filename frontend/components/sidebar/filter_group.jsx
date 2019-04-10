@@ -1,21 +1,37 @@
 import React from 'react';
 
-const FilterGroup = ({ list }) => {
+class FilterGroup extends React.Component {
+  constructor(props){
+    super(props);
 
-  list = list.map((item, idx)=> {
+    
+  }
+
+  render() {
+    let { list, type, toggleFilter } = this.props;
+
+    list = list.map(item => {
+      return (
+        <li className="filter-li" key={item}>
+          <input 
+            onChange={toggleFilter} 
+            type="checkbox" 
+            id={`${type}-${item}`} 
+            data-value={item}
+            data-type={type} 
+          />
+          <label htmlFor={`${type}-${item}`}>{item}</label>
+        </li>
+      );
+    });
+
     return (
-      <li className="filter-li" key={`${item}${idx}`}>
-        <input type="checkbox" name={item} id={`${item}${idx}`} />
-        <label htmlFor={`${item}${idx}`}>{item}</label>
-      </li>
+      <ul className="filter-options">
+        {list}
+      </ul>
     );
-  });
+  }
+}
 
-  return (
-    <ul className="filter-options">
-      {list}
-    </ul>
-  );
-};
 
 export default FilterGroup;
