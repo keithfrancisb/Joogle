@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import { fetchJobs } from '../../store/actions/job_actions';
 
 
-const msp = (state) => {
+const msp = ({entities, errors}) => {
+  const withSearchResults = 
+    Object.keys(entities.jobs).length <= 1 ? false : true;
+
   return {
-    errors: state.errors.job
+    withSearchResults,
+    errors: errors.job
   };
 };
 

@@ -28,4 +28,5 @@ class Api::JobsController < ApplicationController
       render json: ['Job not Found! :('], status: 404
     end
   end
+
 end

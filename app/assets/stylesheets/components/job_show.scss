@@ -10,7 +10,22 @@ width: 100%;
 
 .show-header {
   text-align: center;
-  margin: 35px;
+  margin: 0 auto;
+  margin-top: 45px;
+  margin-bottom: -20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 75%;
+}
+
+.show-header > button {
+  margin: 0px 20px;
+  background: purple;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .job-desc {

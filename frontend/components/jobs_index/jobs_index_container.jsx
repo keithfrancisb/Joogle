@@ -6,6 +6,7 @@ import { filterJobs } from '../../store/selectors';
 const msp = ({ entities, filters }) => {
   
   const jobs = filterJobs(Object.values(entities.jobs), filters);
+  const withSearchResults = jobs.length <= 1 ? false : true;
 
   return {
     applyFilter: filters.applyFilter,

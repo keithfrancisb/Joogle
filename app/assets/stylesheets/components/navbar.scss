@@ -1,8 +1,8 @@
 #navbar {
   background: #3c132d;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   min-height: 150px;
   position: fixed;
@@ -10,31 +10,47 @@
   // margin-left: 300px;
 }
 
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%
-}
-
-// .form-container > button {
-//   background: purple;
-//   padding: 10px 25px;
-//   text-align: center;
-//   font-size: 17px;
-//   font-weight: 800;
-// }
-
-.search-form {
+.search-container {
   width: 45%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 115px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  width: 95%;
+}
+
+.return-btn{
+  background: purple;
+  padding: 13px 15px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  width: 15%;
+}
+
+.search-form {
+  width: 75%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.search-form > button, div, input {
+  margin: 0px 15px;
 }
 
 .input-text-box {
   background: white;
   width: 65%;
+  margin: 0px 15px;
 }
 
 .input-text-box > input[type="text"] {
@@ -52,8 +68,9 @@
   background: purple;
   width: 20%;
   text-align: center;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 800;
+  margin: 0px 15px;
 }
 
 .li-error {

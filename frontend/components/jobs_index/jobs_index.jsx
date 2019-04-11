@@ -7,6 +7,10 @@ class JobsIndex extends React.Component {
     this.viewJobDetails = this.viewJobDetails.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   viewJobDetails(id) {
     return () => {
       this.props.history.push(`/show/${id}`);
@@ -14,6 +18,11 @@ class JobsIndex extends React.Component {
   }
 
   render() {
+    if(this.props.jobs.length === 0) {
+      this.props.history.push('/');
+      return null;
+    }
+
     const jobs = this.props.jobs.map((job, idx) => {
       const desc = job.desc.replace(/(<([^>]+)>)/ig, " ")
       const { company, locations, title } = job;

@@ -18,9 +18,14 @@
   transition: 0.3s all;
 }
 
-/* #splash {
-
-} */
+.joogle-logo {
+  width: 130px;
+  text-align: center;
+  margin: 10px 30px;
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 10px;
+}
 
 .header {
   text-align: center;
@@ -80,7 +85,10 @@ td {
   text-align: center;
 }
 
-/* h1,h2,h3,h4,h5,h6 {
-  text-align: center !important;
-  width: 100%;
-} */
+.error-list {
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  margin: 5px;
+  min-height: 20px;
+}
